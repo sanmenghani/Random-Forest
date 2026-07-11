@@ -88,14 +88,25 @@ Next I generated a classification report which shows precision, recall, and f1 s
 These metrics provide a more complete assessment than accuracy alone by showing how effectively the model identifies both promoted and non-promoted employees.
 
 ##Feature Importance
--importance
+
 <img width="345" height="256" alt="Screenshot 2026-07-11 at 3 33 55 PM" src="https://github.com/user-attachments/assets/b44df647-9a66-4f51-bbc3-8ee2ee60f3db" />
 
--graph
+After training the Random Forest model, I extracted the feature importance scores to identify which variables had the greatest influence on predicting employee promotions. Unlike the correlation heatmap, which measures the linear relationship between individual features and the target variable, the feature importance graph shows how much each feature contributed to the model's predictions after considering all variables together. The chart shows Projects Completed received a feature importance score of 0.425, making it over 2.5 times more influential than Performance Rating (0.166).
+<br><br>
+
 <img width="769" height="429" alt="Screenshot 2026-07-11 at 3 33 59 PM" src="https://github.com/user-attachments/assets/3ffb2e87-0a24-4efb-8f87-c8ef0cd4374b" />
 
+The results closely aligned with the earlier correlation analysis. Projects Completed, which had the strongest positive correlation with Promotion (0.61), also emerged as one of the most important features in the Random Forest model. Years of Experience and Performance Rating, which were the next strongest correlations with promotion, also ranked highly in feature importance. This consistency reinforces that these employee characteristics provide the most valuable information for predicting promotion outcomes and validates the patterns observed during exploratory data analysis.
 
 ##Key Findings
+- The dataset included 2,500 employee records and required minimal preprocessing. The target variable was relatively balanced, with 1,446 employees not promoted (57.8%) and 1,054 promoted (42.2%), reducing the risk of bias toward one class.
+- Correlation analysis identified Projects Completed (0.61) as the feature most strongly associated with promotion, followed by Years of Experience (0.37) and Performance Rating (0.35).
+- The Random Forest model achieved 96% accuracy, precision, recall, and F1-score, correctly classifying 481 of 500 employees in the test dataset. The confusion matrix showed only 19 misclassifications (9 false positives and 10 false negatives), demonstrating strong predictive performance.
+- Feature importance analysis reinforced the exploratory findings. Projects Completed received the highest importance score (0.425), more than 2.5 times the importance of Performance Rating (0.166) and Experience Years (0.161), confirming that project completion was the strongest contributor to promotion predictions.
 
 
+##Conclusion
+This project demonstrates a complete machine learning workflow, from exploratory data analysis and feature selection to model training, evaluation, and interpretation. Both the correlation analysis and Random Forest feature importance consistently identified Projects Completed as the strongest predictor of employee promotions, with Years of Experience and Performance Rating also contributing to the model's decisions. Achieving 96% accuracy with only 19 incorrect predictions out of 500 test records shows that the model effectively learned the patterns associated with promotion outcomes. Overall, this project highlights my ability to analyze data, build interpretable machine learning models, and translate technical results into actionable business insights.
 
+Email: sanaya.menghani@gmail.com \
+LinkedIn: www.linkedin.com/in/sanaya-menghani-aab500175
